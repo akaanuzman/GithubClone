@@ -16,12 +16,9 @@ protocol IService {
 extension IService {
     func fetchDatas<T: Decodable>(endpoint: String) async -> T? {
         let url = "\(AppConstants.baseUrl)\(endpoint)"
-        print(url)
         let request = AF.request(url).serializingDecodable(T.self)
         let response = await request.response
-        print("********")
         response.error?.showError()
-        print("--------")
         return response.value
     }
 }
