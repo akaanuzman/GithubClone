@@ -21,8 +21,12 @@
 		F10DFFB92A72D37B00656A88 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F10DFFB82A72D37B00656A88 /* UserModel.swift */; };
 		F10DFFBB2A72D40700656A88 /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F10DFFBA2A72D40700656A88 /* UserViewModel.swift */; };
 		F168A1742A730D7B0080D1E0 /* SearchModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F168A1732A730D7B0080D1E0 /* SearchModel.swift */; };
-		F168A1762A7339BC0080D1E0 /* SearchListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F168A1752A7339BB0080D1E0 /* SearchListView.swift */; };
+		F168A1762A7339BC0080D1E0 /* ResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F168A1752A7339BB0080D1E0 /* ResultView.swift */; };
 		F17236D02A7417650043F2EF /* SearchEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17236CF2A7417650043F2EF /* SearchEnum.swift */; };
+		F17236D22A741AF90043F2EF /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17236D12A741AF90043F2EF /* SearchViewModel.swift */; };
+		F17236D42A7445C60043F2EF /* RepositoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17236D32A7445C60043F2EF /* RepositoryModel.swift */; };
+		F17236D62A744A820043F2EF /* IssueModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17236D52A744A820043F2EF /* IssueModel.swift */; };
+		F17236D82A744BF20043F2EF /* UsersModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17236D72A744BF20043F2EF /* UsersModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,8 +44,12 @@
 		F10DFFB82A72D37B00656A88 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		F10DFFBA2A72D40700656A88 /* UserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewModel.swift; sourceTree = "<group>"; };
 		F168A1732A730D7B0080D1E0 /* SearchModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchModel.swift; sourceTree = "<group>"; };
-		F168A1752A7339BB0080D1E0 /* SearchListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchListView.swift; sourceTree = "<group>"; };
+		F168A1752A7339BB0080D1E0 /* ResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultView.swift; sourceTree = "<group>"; };
 		F17236CF2A7417650043F2EF /* SearchEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchEnum.swift; sourceTree = "<group>"; };
+		F17236D12A741AF90043F2EF /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
+		F17236D32A7445C60043F2EF /* RepositoryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryModel.swift; sourceTree = "<group>"; };
+		F17236D52A744A820043F2EF /* IssueModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IssueModel.swift; sourceTree = "<group>"; };
+		F17236D72A744BF20043F2EF /* UsersModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,7 +129,7 @@
 			children = (
 				F10DFF8E2A72B9CA00656A88 /* ContentView.swift */,
 				F10DFF9E2A72BDD900656A88 /* SearchView.swift */,
-				F168A1752A7339BB0080D1E0 /* SearchListView.swift */,
+				F168A1752A7339BB0080D1E0 /* ResultView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -130,6 +138,7 @@
 			isa = PBXGroup;
 			children = (
 				F10DFFBA2A72D40700656A88 /* UserViewModel.swift */,
+				F17236D12A741AF90043F2EF /* SearchViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -139,6 +148,9 @@
 			children = (
 				F10DFFB82A72D37B00656A88 /* UserModel.swift */,
 				F168A1732A730D7B0080D1E0 /* SearchModel.swift */,
+				F17236D32A7445C60043F2EF /* RepositoryModel.swift */,
+				F17236D52A744A820043F2EF /* IssueModel.swift */,
+				F17236D72A744BF20043F2EF /* UsersModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -272,14 +284,18 @@
 				F10DFF8F2A72B9CA00656A88 /* ContentView.swift in Sources */,
 				F10DFF8D2A72B9CA00656A88 /* GithubCloneApp.swift in Sources */,
 				F10DFFB42A72CE3A00656A88 /* AppConstants.swift in Sources */,
+				F17236D62A744A820043F2EF /* IssueModel.swift in Sources */,
 				F168A1742A730D7B0080D1E0 /* SearchModel.swift in Sources */,
 				F10DFFB12A72C90C00656A88 /* Endpoints.swift in Sources */,
+				F17236D42A7445C60043F2EF /* RepositoryModel.swift in Sources */,
+				F17236D22A741AF90043F2EF /* SearchViewModel.swift in Sources */,
 				F10DFFA52A72C49A00656A88 /* SearchField.swift in Sources */,
 				F17236D02A7417650043F2EF /* SearchEnum.swift in Sources */,
 				F10DFF9F2A72BDD900656A88 /* SearchView.swift in Sources */,
-				F168A1762A7339BC0080D1E0 /* SearchListView.swift in Sources */,
+				F168A1762A7339BC0080D1E0 /* ResultView.swift in Sources */,
 				F10DFFB92A72D37B00656A88 /* UserModel.swift in Sources */,
 				F10DFFBB2A72D40700656A88 /* UserViewModel.swift in Sources */,
+				F17236D82A744BF20043F2EF /* UsersModel.swift in Sources */,
 				F10DFFAA2A72C5AE00656A88 /* IService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

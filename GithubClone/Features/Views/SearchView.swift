@@ -63,7 +63,7 @@ private struct SearchListView: View {
     var body: some View {
         List {
             ForEach(SearchModel.searchItems) { item in
-                NavigationLink(destination: ResultView()) {
+                NavigationLink(destination: ResultView(searchType: item.type, searchText: searchText)) {
                     HStack {
                         Image(systemName: item.icon)
                         Text("\(item.title) '\(searchText)'")

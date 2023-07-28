@@ -17,7 +17,7 @@ class UserViewModel: ObservableObject, IService {
         }
     }
     
-    func getUserInformation() async {
+    private func getUserInformation() async {
         print("\(Endpoints.User.user.rawValue)akaanuzman")
         user = await fetchDatas(endpoint: "\(Endpoints.User.user.rawValue)akaanuzman")
     }
