@@ -68,9 +68,11 @@ private struct SearchListView: View {
                         Image(systemName: item.icon)
                         Text("\(item.title) '\(searchText)'")
                     }
+                    .padding(.vertical)
                 }
             }
-        }.listStyle(.inset)
+        }
+        .listStyle(.inset)
     }
 }
 

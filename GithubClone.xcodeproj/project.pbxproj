@@ -30,6 +30,7 @@
 		F19987662A76A33600A3687D /* Extension+TimeAgoFromDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F19987652A76A33600A3687D /* Extension+TimeAgoFromDate.swift */; };
 		F19987692A76AB1D00A3687D /* Extension+StringToDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F19987682A76AB1D00A3687D /* Extension+StringToDate.swift */; };
 		F199876B2A76ADAA00A3687D /* Extension+RGBColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F199876A2A76ADAA00A3687D /* Extension+RGBColor.swift */; };
+		F199876D2A76C30C00A3687D /* Extension+RandomColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F199876C2A76C30C00A3687D /* Extension+RandomColor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -56,6 +57,7 @@
 		F19987652A76A33600A3687D /* Extension+TimeAgoFromDate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+TimeAgoFromDate.swift"; sourceTree = "<group>"; };
 		F19987682A76AB1D00A3687D /* Extension+StringToDate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+StringToDate.swift"; sourceTree = "<group>"; };
 		F199876A2A76ADAA00A3687D /* Extension+RGBColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+RGBColor.swift"; sourceTree = "<group>"; };
+		F199876C2A76C30C00A3687D /* Extension+RandomColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+RandomColor.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -200,6 +202,7 @@
 				F19987652A76A33600A3687D /* Extension+TimeAgoFromDate.swift */,
 				F19987682A76AB1D00A3687D /* Extension+StringToDate.swift */,
 				F199876A2A76ADAA00A3687D /* Extension+RGBColor.swift */,
+				F199876C2A76C30C00A3687D /* Extension+RandomColor.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -308,6 +311,7 @@
 				F10DFFBB2A72D40700656A88 /* UserViewModel.swift in Sources */,
 				F199876B2A76ADAA00A3687D /* Extension+RGBColor.swift in Sources */,
 				F17236D82A744BF20043F2EF /* UsersModel.swift in Sources */,
+				F199876D2A76C30C00A3687D /* Extension+RandomColor.swift in Sources */,
 				F10DFFAA2A72C5AE00656A88 /* IService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

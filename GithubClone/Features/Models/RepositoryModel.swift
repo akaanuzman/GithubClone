@@ -46,7 +46,7 @@ struct Item: Codable {
     let svnurl: String?
     let homepage: String?
     let size, stargazersCount, watchersCount: Int?
-    let language: Language?
+    let language: String?
     let hasIssues, hasProjects, hasDownloads, hasWiki: Bool?
     let hasPages, hasDiscussions: Bool?
     let forksCount: Int?
@@ -116,7 +116,7 @@ struct Item: Codable {
         case homepage, size
         case stargazersCount = "stargazers_count"
         case watchersCount = "watchers_count"
-        case language
+        case language = "language"
         case hasIssues = "has_issues"
         case hasProjects = "has_projects"
         case hasDownloads = "has_downloads"
@@ -143,12 +143,6 @@ enum DefaultBranch: String, Codable {
     case develop = "develop"
     case main = "main"
     case master = "master"
-}
-
-enum Language: String, Codable {
-    case c = "C++"
-    case dart = "Dart"
-    case html = "HTML"
 }
 
 // MARK: - License
