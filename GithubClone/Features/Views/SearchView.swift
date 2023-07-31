@@ -42,6 +42,8 @@ struct SearchView: View {
     }
 }
 
+// MARK: If the search field is empty, it is displayed on the screen.
+
 private struct EmptySearchView: View {
     var body: some View {
         VStack {
@@ -49,7 +51,7 @@ private struct EmptySearchView: View {
             Text("Find your stuff.")
                 .font(.title2)
                 .fontWeight(.semibold)
-            Spacer().frame(height: 10)
+            Spacer().frame(height: SpacerConstants.medium)
             Text("Search all of Github for People, Repositories, Organizations, Issues, and Pull Requests.")
                 .foregroundColor(.gray)
                 .multilineTextAlignment(.center)
@@ -57,6 +59,8 @@ private struct EmptySearchView: View {
         }
     }
 }
+
+// MARK: If the search field is full, it will be displayed on the screen.
 
 private struct SearchListView: View {
     var searchText: String

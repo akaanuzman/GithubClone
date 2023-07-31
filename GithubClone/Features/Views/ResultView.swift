@@ -21,46 +21,41 @@ struct ResultView: View {
     var body: some View {
         NavigationView {
             switch searchType {
-            case .issues:
-                if let issues = searchViewModel.issues {
-                    if let items = issues.items {
-                        if items.isEmpty {
-                            Text("There aren't any issues.")
-                                .font(.title2)
-                        }
-                        else {
-                            IssuesView(issues: items)
-                        }
-                    }
-                }
-                else {
-                    ProgressView()
-                }
             case .repositories:
-                if let repositories = searchViewModel.repositories {
-                    if let items = repositories.items {
-                        if items.isEmpty {
-                            Text("There aren't any repositories.")
-                                .font(.title2)
-                        }
-                        else {
-                            RepositoriesView(repositories: items)
-                        }
+                if let repositories = searchViewModel.repositories, let items = repositories.items {
+                    if items.isEmpty {
+                        Text("There aren't any repositories.")
+                            .font(.title2)
+                    }
+                    else {
+                        RepositoriesView(repositories: items)
                     }
                 }
                 else {
                     ProgressView()
                 }
+            case .issues:
+                if let issues = searchViewModel.issues, let items = issues.items {
+                    if items.isEmpty {
+                        Text("There aren't any issues.")
+                            .font(.title2)
+                    }
+                    else {
+                        IssuesView(issues: items)
+                    }
+                }
+                else {
+                    ProgressView()
+                }
+
             case .users:
-                if let users = searchViewModel.users {
-                    if let items = users.items {
-                        if items.isEmpty {
-                            Text("There aren't any users.")
-                                .font(.title2)
-                        }
-                        else {
-                            UsersView(users: items)
-                        }
+                if let users = searchViewModel.users, let items = users.items {
+                    if items.isEmpty {
+                        Text("There aren't any users.")
+                            .font(.title2)
+                    }
+                    else {
+                        UsersView(users: items)
                     }
                 }
                 else {
@@ -78,6 +73,67 @@ struct ResultView: View {
     }
 }
 
+// MARK: Repository list by search result
+
+private struct RepositoriesView: View {
+    var repositories: [Item]
+    var body: some View {
+        List(repositories, id: \.id) { item in
+            VStack(alignment: .leading) {
+                AvatarAndRepoOwnerSection(item: item)
+                Spacer().frame(height: SpacerConstants.medium)
+                // REPO NAME
+                Text(item.name ?? "")
+                    .font(.headline)
+                Spacer().frame(height: SpacerConstants.small)
+                // REPO DESCRIPTION
+                Text(item.description ?? "")
+                    .font(.subheadline)
+                Spacer().frame(height: SpacerConstants.medium)
+                StarAndProgrammingLanguageSection(item: item)
+            }
+            .padding(.vertical, 5)
+        }
+        .listStyle(.inset)
+    }
+}
+
+// MARK: REPOSITORY AVATAR AND REPO OWNER SECTION
+
+private struct AvatarAndRepoOwnerSection: View {
+    let item: Item
+    var body: some View {
+        HStack {
+            NetworkImageView(url: item.owner?.avatarurl ?? "", size: .small)
+            Text(item.owner?.login ?? "")
+                .modifier(GraySubheadline())
+        }
+    }
+}
+
+// MARK: REPOSITORY STAR AND PROGRAMMING LANGUAGE SECTION
+
+private struct StarAndProgrammingLanguageSection: View {
+    let item: Item
+    var body: some View {
+        HStack {
+            Image(systemName: IconEnum.starFill.rawValue)
+                .foregroundColor(.yellow)
+            Text("\(item.stargazersCount ?? 0)")
+                .foregroundColor(.gray)
+                .fontWeight(.medium)
+            Spacer().frame(width: SpacerConstants.medium)
+            Image(systemName: IconEnum.circleFill.rawValue)
+                .foregroundColor(Color.random())
+            Text(item.language ?? "")
+                .foregroundColor(.gray)
+                .fontWeight(.medium)
+        }
+    }
+}
+
+// MARK: Issues list by search result
+
 private struct IssuesView: View {
     var issues: [IssueItem]
 
@@ -89,34 +145,24 @@ private struct IssuesView: View {
         List(issues, id: \.id) {
             issue in
             HStack(alignment: .top) {
-                Image(systemName: "smallcircle.filled.circle")
+                Image(systemName: IconEnum.smallCircleFilledCircle.rawValue)
                     .foregroundColor(.green)
                     .font(.title2)
-                Spacer().frame(width: 16)
+                Spacer().frame(width: SpacerConstants.large)
                 HStack {
                     VStack(alignment: .leading) {
                         Text("\(issue.user?.login ?? "")/\(getRepositoryName(item: issue))")
                             .font(.subheadline)
                             .foregroundColor(.gray)
-                        Spacer().frame(height: 5)
+                        Spacer().frame(height: SpacerConstants.small)
                         Text(issue.title ?? "")
                         if let labels = issue.labels {
-                            HStack {
-                                ForEach(labels, id: \.id) { label in
-                                    let bgColor = label.color != nil ? Color(hex: label.color!) : Color.gray.opacity(0.2)
-                                    Text(label.name ?? "")
-                                        .font(.caption)
-                                        .padding(5)
-                                        .background(bgColor)
-                                        .cornerRadius(10)
-                                }
-                            }
+                            IssueLabelSection(labels: labels)
                         }
                     }
                     Spacer()
                     Text(issue.updatedAt?.getUpdatedDate() ?? "")
-                        .font(.subheadline)
-                        .foregroundColor(.gray)
+                        .modifier(GraySubheadline())
                 }
             }
             .padding(.vertical, 5)
@@ -125,77 +171,52 @@ private struct IssuesView: View {
     }
 }
 
-private struct RepositoriesView: View {
-    var repositories: [Item]
+// MARK: Issue's owned labels
+
+private struct IssueLabelSection: View {
+    let labels: [Label]
+
     var body: some View {
-        List(repositories, id: \.id) { item in
-            VStack(alignment: .leading) {
-                HStack {
-                    AsyncImage(url: URL(string: item.owner?.avatarurl ?? "")) { image in
-                        image.resizable()
-                            .aspectRatio(contentMode: .fit)
-                            .frame(width: 25, height: 25)
-                            .clipShape(Circle())
-                    } placeholder: {
-                        ProgressView()
-                    }
-                    Text(item.owner?.login ?? "")
-                        .font(.subheadline)
-                        .foregroundColor(.gray)
-                }
-                Spacer().frame(height: 10)
-                Text(item.name ?? "")
-                    .font(.headline)
-                Spacer().frame(height: 5)
-                Text(item.description ?? "")
-                    .font(.subheadline)
-                Spacer().frame(height: 10)
-                HStack {
-                    Image(systemName: "star.fill")
-                        .foregroundColor(.yellow)
-                    Text("\(item.stargazersCount ?? 0)")
-                        .foregroundColor(.gray)
-                        .fontWeight(.medium)
-                    Spacer().frame(width: 15)
-                    Image(systemName: "circle.fill")
-                        .foregroundColor(Color.random())
-                    Text(item.language ?? "")
-                        .foregroundColor(.gray)
-                        .fontWeight(.medium)
-                }
+        HStack {
+            ForEach(labels, id: \.id) { label in
+                let bgColor = label.color != nil ? Color(hex: label.color!) : Color.gray.opacity(0.2)
+                Text(label.name ?? "")
+                    .modifier(LabelModifier(bgColor: bgColor))
             }
-            .padding(.vertical, 5)
         }
-        .listStyle(.inset)
     }
 }
+
+// MARK: Users list by search result
 
 private struct UsersView: View {
     var users: [UserItem]
     var body: some View {
         List(users, id: \.id) { item in
             HStack {
-                HStack {
-                    AsyncImage(url: URL(string: item.avatarurl ?? "")) { image in
-                        image.resizable()
-                            .aspectRatio(contentMode: .fit)
-                            .frame(width: 50, height: 50)
-                            .clipShape(Circle())
-                    } placeholder: {
-                        ProgressView()
-                    }
-                    Spacer().frame(width: 16)
-                    Text(item.login ?? "")
-                        .font(.headline)
-                        .fontWeight(.semibold)
-                }
+                UserPpAndUsernameSection(item: item)
                 Spacer()
-                Image(systemName: "chevron.right")
+                Image(systemName: IconEnum.chevronRight.rawValue)
                     .foregroundColor(.gray)
             }
             .padding(.vertical, 5)
         }
         .listStyle(.inset)
+    }
+}
+
+// MARK: USER PP AND USERNAME
+
+private struct UserPpAndUsernameSection: View {
+    let item: UserItem
+    var body: some View {
+        HStack {
+            NetworkImageView(url: item.avatarurl ?? "", size: .medium)
+            Spacer().frame(width: SpacerConstants.large)
+            Text(item.login ?? "")
+                .font(.headline)
+                .fontWeight(.semibold)
+        }
     }
 }
 

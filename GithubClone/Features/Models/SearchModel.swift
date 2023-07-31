@@ -16,8 +16,8 @@ struct SearchModel: Identifiable {
 
 extension SearchModel {
     static var searchItems: [SearchModel] = [
-        SearchModel(icon: "book.closed", title: "Repositories with", type: .repositories),
-        SearchModel(icon: "smallcircle.filled.circle", title: "Issues with", type: .issues),
-        SearchModel(icon: "person", title: "People with", type: .users)
+        SearchModel(icon: IconEnum.bookClosed.rawValue, title: "Repositories with", type: .repositories),
+        SearchModel(icon: IconEnum.smallCircleFilledCircle.rawValue, title: "Issues with", type: .issues),
+        SearchModel(icon: IconEnum.person.rawValue, title: "People with", type: .users)
     ]
 }

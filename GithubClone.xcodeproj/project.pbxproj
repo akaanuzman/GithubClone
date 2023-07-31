@@ -31,6 +31,12 @@
 		F19987692A76AB1D00A3687D /* Extension+StringToDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F19987682A76AB1D00A3687D /* Extension+StringToDate.swift */; };
 		F199876B2A76ADAA00A3687D /* Extension+RGBColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F199876A2A76ADAA00A3687D /* Extension+RGBColor.swift */; };
 		F199876D2A76C30C00A3687D /* Extension+RandomColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F199876C2A76C30C00A3687D /* Extension+RandomColor.swift */; };
+		F1F184352A78370B0055EE09 /* IconEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1F184342A78370B0055EE09 /* IconEnum.swift */; };
+		F1F184382A78380A0055EE09 /* NetworkImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1F184372A78380A0055EE09 /* NetworkImageView.swift */; };
+		F1F1843A2A7838B40055EE09 /* NetworkImageEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1F184392A7838B40055EE09 /* NetworkImageEnum.swift */; };
+		F1F1843D2A7839EE0055EE09 /* GraySubheadline.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1F1843C2A7839EE0055EE09 /* GraySubheadline.swift */; };
+		F1F1843F2A783A770055EE09 /* LabelModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1F1843E2A783A770055EE09 /* LabelModifier.swift */; };
+		F1F184412A783AE20055EE09 /* SpacerConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1F184402A783AE20055EE09 /* SpacerConstants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -58,6 +64,12 @@
 		F19987682A76AB1D00A3687D /* Extension+StringToDate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+StringToDate.swift"; sourceTree = "<group>"; };
 		F199876A2A76ADAA00A3687D /* Extension+RGBColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+RGBColor.swift"; sourceTree = "<group>"; };
 		F199876C2A76C30C00A3687D /* Extension+RandomColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+RandomColor.swift"; sourceTree = "<group>"; };
+		F1F184342A78370B0055EE09 /* IconEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconEnum.swift; sourceTree = "<group>"; };
+		F1F184372A78380A0055EE09 /* NetworkImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkImageView.swift; sourceTree = "<group>"; };
+		F1F184392A7838B40055EE09 /* NetworkImageEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkImageEnum.swift; sourceTree = "<group>"; };
+		F1F1843C2A7839EE0055EE09 /* GraySubheadline.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraySubheadline.swift; sourceTree = "<group>"; };
+		F1F1843E2A783A770055EE09 /* LabelModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelModifier.swift; sourceTree = "<group>"; };
+		F1F184402A783AE20055EE09 /* SpacerConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpacerConstants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,6 +135,7 @@
 		F10DFF9C2A72BA3D00656A88 /* Products */ = {
 			isa = PBXGroup;
 			children = (
+				F1F1843B2A78399B0055EE09 /* ViewModifiers */,
 				F10DFFB22A72CE2E00656A88 /* Constants */,
 				F10DFFA82A72C59F00656A88 /* Extensions */,
 				F10DFFA72A72C59B00656A88 /* Enums */,
@@ -135,6 +148,7 @@
 		F10DFF9D2A72BC5B00656A88 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				F1F184422A783D610055EE09 /* Repository */,
 				F10DFF8E2A72B9CA00656A88 /* ContentView.swift */,
 				F10DFF9E2A72BDD900656A88 /* SearchView.swift */,
 				F168A1752A7339BB0080D1E0 /* ResultView.swift */,
@@ -166,6 +180,7 @@
 		F10DFFA22A72C48100656A88 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				F1F184362A7837F90055EE09 /* AsyncImage */,
 				F10DFFA32A72C48700656A88 /* TextField */,
 			);
 			path = Components;
@@ -192,6 +207,8 @@
 			children = (
 				F10DFFB02A72C90C00656A88 /* Endpoints.swift */,
 				F17236CF2A7417650043F2EF /* SearchEnum.swift */,
+				F1F184342A78370B0055EE09 /* IconEnum.swift */,
+				F1F184392A7838B40055EE09 /* NetworkImageEnum.swift */,
 			);
 			path = Enums;
 			sourceTree = "<group>";
@@ -211,8 +228,33 @@
 			isa = PBXGroup;
 			children = (
 				F10DFFB32A72CE3A00656A88 /* AppConstants.swift */,
+				F1F184402A783AE20055EE09 /* SpacerConstants.swift */,
 			);
 			path = Constants;
+			sourceTree = "<group>";
+		};
+		F1F184362A7837F90055EE09 /* AsyncImage */ = {
+			isa = PBXGroup;
+			children = (
+				F1F184372A78380A0055EE09 /* NetworkImageView.swift */,
+			);
+			path = AsyncImage;
+			sourceTree = "<group>";
+		};
+		F1F1843B2A78399B0055EE09 /* ViewModifiers */ = {
+			isa = PBXGroup;
+			children = (
+				F1F1843C2A7839EE0055EE09 /* GraySubheadline.swift */,
+				F1F1843E2A783A770055EE09 /* LabelModifier.swift */,
+			);
+			path = ViewModifiers;
+			sourceTree = "<group>";
+		};
+		F1F184422A783D610055EE09 /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Repository;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -293,16 +335,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F1F1843F2A783A770055EE09 /* LabelModifier.swift in Sources */,
 				F10DFF8F2A72B9CA00656A88 /* ContentView.swift in Sources */,
 				F10DFF8D2A72B9CA00656A88 /* GithubCloneApp.swift in Sources */,
 				F10DFFB42A72CE3A00656A88 /* AppConstants.swift in Sources */,
 				F17236D62A744A820043F2EF /* IssueModel.swift in Sources */,
 				F168A1742A730D7B0080D1E0 /* SearchModel.swift in Sources */,
+				F1F184352A78370B0055EE09 /* IconEnum.swift in Sources */,
 				F10DFFB12A72C90C00656A88 /* Endpoints.swift in Sources */,
+				F1F1843D2A7839EE0055EE09 /* GraySubheadline.swift in Sources */,
 				F17236D42A7445C60043F2EF /* RepositoryModel.swift in Sources */,
 				F17236D22A741AF90043F2EF /* SearchViewModel.swift in Sources */,
+				F1F1843A2A7838B40055EE09 /* NetworkImageEnum.swift in Sources */,
 				F10DFFA52A72C49A00656A88 /* SearchField.swift in Sources */,
+				F1F184412A783AE20055EE09 /* SpacerConstants.swift in Sources */,
 				F17236D02A7417650043F2EF /* SearchEnum.swift in Sources */,
+				F1F184382A78380A0055EE09 /* NetworkImageView.swift in Sources */,
 				F10DFF9F2A72BDD900656A88 /* SearchView.swift in Sources */,
 				F19987692A76AB1D00A3687D /* Extension+StringToDate.swift in Sources */,
 				F168A1762A7339BC0080D1E0 /* ResultView.swift in Sources */,
