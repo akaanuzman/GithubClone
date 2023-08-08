@@ -58,7 +58,7 @@ struct Item: Codable {
     let topics: [String]?
     let visibility: Visibility?
     let forks, openIssues, watchers: Int?
-    let defaultBranch: DefaultBranch?
+    let defaultBranch: String?
     let score: Int?
 
     enum CodingKeys: String, CodingKey {
@@ -137,12 +137,6 @@ struct Item: Codable {
         case defaultBranch = "default_branch"
         case score
     }
-}
-
-enum DefaultBranch: String, Codable {
-    case develop = "develop"
-    case main = "main"
-    case master = "master"
 }
 
 // MARK: - License

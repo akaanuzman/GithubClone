@@ -33,6 +33,6 @@ extension AFError {
     private static let logger = Logger(label: "")
 
     func showError() {
-        AFError.logger.error("Error Handled: \(errorDescription?.description ?? "**")")
+        print("Error Handled: \(errorDescription?.description ?? "**")")
     }
 }

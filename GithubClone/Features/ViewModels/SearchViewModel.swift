@@ -19,13 +19,10 @@ class SearchViewModel: ObservableObject, IService {
     init(searchType: SearchEnum, endpoint: String) {
         self.searchType = searchType
         self.endpoint = endpoint
-        Task.detached {
-            await self.fetchDatasForSearchType()
-        }
     }
     
     
-    private func fetchDatasForSearchType() async -> Void {
+    public func fetchDatasForSearchType() async -> Void {
         switch searchType {
         case .repositories:
             repositories = await fetchDatas(endpoint: "\(Endpoints.Search.searchRepository.rawValue)\(endpoint)")

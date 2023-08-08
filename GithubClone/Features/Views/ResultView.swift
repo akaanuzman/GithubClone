@@ -70,6 +70,11 @@ struct ResultView: View {
                     .fontWeight(.semibold)
             }
         }
+        .onAppear {
+            Task {
+                await searchViewModel.fetchDatasForSearchType()
+            }
+        }
     }
 }
 
