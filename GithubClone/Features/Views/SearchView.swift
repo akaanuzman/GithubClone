@@ -10,26 +10,10 @@ import SwiftUI
 struct SearchView: View {
     @State var searchText: String = ""
     @State var isClickField: Bool = false
+
     var body: some View {
         NavigationView {
             VStack {
-                if isClickField {
-                    HStack {
-                        SearchField(text: $searchText)
-                            .onTapGesture {
-                                isClickField = true
-                            }
-                        Button("Cancel") {
-                            searchText = ""
-                            isClickField = false
-                        }
-                    }
-                } else {
-                    SearchField(text: $searchText)
-                        .onTapGesture {
-                            isClickField = true
-                        }
-                }
                 Spacer()
                 if searchText.isEmpty {
                     EmptySearchView()
@@ -38,7 +22,7 @@ struct SearchView: View {
                 }
             }
             .padding()
-        }
+        }.searchable(text: $searchText)
     }
 }
 

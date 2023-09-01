@@ -12,7 +12,6 @@
 		F10DFF912A72B9CA00656A88 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F10DFF902A72B9CA00656A88 /* Assets.xcassets */; };
 		F10DFF952A72B9CA00656A88 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F10DFF942A72B9CA00656A88 /* Preview Assets.xcassets */; };
 		F10DFF9F2A72BDD900656A88 /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F10DFF9E2A72BDD900656A88 /* SearchView.swift */; };
-		F10DFFA52A72C49A00656A88 /* SearchField.swift in Sources */ = {isa = PBXBuildFile; fileRef = F10DFFA42A72C49A00656A88 /* SearchField.swift */; };
 		F10DFFAA2A72C5AE00656A88 /* IService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F10DFFA92A72C5AE00656A88 /* IService.swift */; };
 		F10DFFAF2A72C70D00656A88 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = F10DFFAE2A72C70D00656A88 /* Alamofire */; };
 		F10DFFB12A72C90C00656A88 /* Endpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = F10DFFB02A72C90C00656A88 /* Endpoints.swift */; };
@@ -66,7 +65,6 @@
 		F10DFF922A72B9CA00656A88 /* GithubClone.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = GithubClone.entitlements; sourceTree = "<group>"; };
 		F10DFF942A72B9CA00656A88 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		F10DFF9E2A72BDD900656A88 /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
-		F10DFFA42A72C49A00656A88 /* SearchField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchField.swift; sourceTree = "<group>"; };
 		F10DFFA92A72C5AE00656A88 /* IService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IService.swift; sourceTree = "<group>"; };
 		F10DFFB02A72C90C00656A88 /* Endpoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoints.swift; sourceTree = "<group>"; };
 		F10DFFB32A72CE3A00656A88 /* AppConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConstants.swift; sourceTree = "<group>"; };
@@ -210,17 +208,8 @@
 			isa = PBXGroup;
 			children = (
 				F1F184362A7837F90055EE09 /* AsyncImage */,
-				F10DFFA32A72C48700656A88 /* TextField */,
 			);
 			path = Components;
-			sourceTree = "<group>";
-		};
-		F10DFFA32A72C48700656A88 /* TextField */ = {
-			isa = PBXGroup;
-			children = (
-				F10DFFA42A72C49A00656A88 /* SearchField.swift */,
-			);
-			path = TextField;
 			sourceTree = "<group>";
 		};
 		F10DFFA62A72C59400656A88 /* Services */ = {
@@ -407,7 +396,6 @@
 				F17236D42A7445C60043F2EF /* RepositoryModel.swift in Sources */,
 				F17236D22A741AF90043F2EF /* SearchViewModel.swift in Sources */,
 				F1F1843A2A7838B40055EE09 /* NetworkImageEnum.swift in Sources */,
-				F10DFFA52A72C49A00656A88 /* SearchField.swift in Sources */,
 				F1F184412A783AE20055EE09 /* SpacerConstants.swift in Sources */,
 				F17236D02A7417650043F2EF /* SearchEnum.swift in Sources */,
 				F1F184382A78380A0055EE09 /* NetworkImageView.swift in Sources */,
