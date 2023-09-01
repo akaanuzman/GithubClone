@@ -9,7 +9,6 @@ import SwiftUI
 
 struct SearchView: View {
     @State var searchText: String = ""
-    @State var isClickField: Bool = false
 
     var body: some View {
         NavigationView {
