@@ -83,23 +83,27 @@ struct ResultView: View {
 private struct RepositoriesView: View {
     var repositories: [Item]
     var body: some View {
-        List(repositories, id: \.id) { item in
-            VStack(alignment: .leading) {
-                AvatarAndRepoOwnerSection(item: item)
-                Spacer().frame(height: SpacerConstants.medium)
-                // REPO NAME
-                Text(item.name ?? "")
-                    .font(.headline)
-                Spacer().frame(height: SpacerConstants.small)
-                // REPO DESCRIPTION
-                Text(item.description ?? "")
-                    .font(.subheadline)
-                Spacer().frame(height: SpacerConstants.medium)
-                StarAndProgrammingLanguageSection(item: item)
+        ScrollView {
+            LazyVStack(alignment: .leading) {
+                ForEach(repositories, id: \.id) { item in
+                    VStack(alignment: .leading) {
+                        AvatarAndRepoOwnerSection(item: item)
+                        Spacer().frame(height: SpacerConstants.medium)
+                        // REPO NAME
+                        Text(item.name ?? "")
+                            .font(.headline)
+                        Spacer().frame(height: SpacerConstants.small)
+                        // REPO DESCRIPTION
+                        Text(item.description ?? "")
+                            .font(.subheadline)
+                        Spacer().frame(height: SpacerConstants.medium)
+                        StarAndProgrammingLanguageSection(item: item)
+                    }
+                    .padding(.vertical, 5)
+                }
             }
-            .padding(.vertical, 5)
+            .padding()
         }
-        .listStyle(.inset)
     }
 }
 
@@ -227,6 +231,6 @@ private struct UserPpAndUsernameSection: View {
 
 struct ResultView_Previews: PreviewProvider {
     static var previews: some View {
-        ResultView(searchType: .issues, searchText: "flutter")
+        ResultView(searchType: .repositories, searchText: "flutter")
     }
 }

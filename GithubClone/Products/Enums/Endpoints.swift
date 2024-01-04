@@ -18,4 +18,8 @@ struct Endpoints {
         case searchIssue = "search/issues?q="
         case searchRepository = "search/repositories?q="
     }
+    
+    enum TestEndpoint: String {
+        case swift = "swift"
+    }
 }

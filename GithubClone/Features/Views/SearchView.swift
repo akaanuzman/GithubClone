@@ -13,15 +13,14 @@ struct SearchView: View {
     var body: some View {
         NavigationView {
             VStack {
-                Spacer()
                 if searchText.isEmpty {
                     EmptySearchView()
                 } else {
                     SearchListView(searchText: searchText)
                 }
-            }
+            }.searchable(text: $searchText)
             .padding()
-        }.searchable(text: $searchText)
+        }
     }
 }
 
